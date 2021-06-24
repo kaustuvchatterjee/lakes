@@ -1,4 +1,4 @@
-name: scraper-san-juan-gobierno
+name: update_lakelevels
 
 on:
   schedule:
