@@ -3,4 +3,4 @@
 # lakes
 Mumbai Lake Levels
 
-Updates data on water levels in lakes supplying water to MUmbai
+Updates data on water levels in lakes supplying water to Mumbai
