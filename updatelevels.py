@@ -15,7 +15,7 @@ r = requests.get(url, headers=headers)
 soup = BeautifulSoup(r.text,"html.parser")
 
 
-str="Below is the water level reported at 6 a.m. on 22nd June 2021 in million litres (ML)"
+
 dateP = soup.find('p',text = re.compile('Below is the water level reported at*'))
 str = dateP.text
 x = re.search('\son\s',str)
@@ -28,7 +28,7 @@ obsDate = datetime.strptime(obsDate,'%d %B %Y')
 print(obsDate)
 
 
-str = "wptb-preview-table wptb-element-main-table_setting-21257 edit-active"
+str = "wptb-preview-table wptb-element-main-table_setting-21257"
 data_table = soup.find('table',{'class':str})
 data = data_table.find_all('tr')
 lake = []
