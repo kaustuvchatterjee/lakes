@@ -33,8 +33,8 @@ try:
     x = re.search('\sat\s',str)
     end = x.start()
     obsDate1 = str[start:end]
-    obsDate1 = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate)
-    obsDate1 = datetime.strptime(obsDate,'%d %B %Y')
+    obsDate1 = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate1)
+    obsDate1 = datetime.strptime(obsDate1,'%d %B %Y')
 
 
     str = "wptb-preview-table wptb-element-main-table_setting-21257"
@@ -59,13 +59,13 @@ try:
         dct = {'date':obsDate, 'lake':lake, 'level':level, 'capacity':capacity, 'content':content}
         df2 = pd.DataFrame(dct)
         df = df.append(df2, ignore_index=True)
-        df.to_csv('lakelevels.csv')
+        df.to_csv('lakelevels.csv', index=False)
 
     if obsDate1 not in df.values:
         dct = {'date':obsDate1, 'lake':lake, 'level':level, 'capacity':capacity, 'content':content}
         df2 = pd.DataFrame(dct)
         df = df.append(df2, ignore_index=True)
-        df.to_csv('lakelevels.csv')        
+        df.to_csv('lakelevels.csv', index=False)        
     
 except:
     pass
