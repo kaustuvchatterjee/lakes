@@ -25,7 +25,16 @@ try:
     obsDate = str[start:end]
     obsDate = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate)
     obsDate = datetime.strptime(obsDate,'%d %B %Y')
-    print(obsDate)
+
+    dateP = soup.find(lambda tag:tag.name=="p" and "The present lake level today" in tag.text)
+    str = dateP.text
+    x = re.search('\son\s',str)
+    start = x.end()
+    x = re.search('\sat\s',str)
+    end = x.start()
+    obsDate1 = str[start:end]
+    obsDate1 = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate)
+    obsDate1 = datetime.strptime(obsDate,'%d %B %Y')
 
 
     str = "wptb-preview-table wptb-element-main-table_setting-21257"
@@ -51,5 +60,12 @@ try:
         df2 = pd.DataFrame(dct)
         df = df.append(df2, ignore_index=True)
         df.to_csv('lakelevels.csv')
+
+    if obsDate1 not in df.values:
+        dct = {'date':obsDate1, 'lake':lake, 'level':level, 'capacity':capacity, 'content':content}
+        df2 = pd.DataFrame(dct)
+        df = df.append(df2, ignore_index=True)
+        df.to_csv('lakelevels.csv')        
+    
 except:
     pass
