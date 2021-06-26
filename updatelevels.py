@@ -39,6 +39,9 @@ try:
 
     str = "wptb-preview-table wptb-element-main-table_setting-21257"
     data_table = soup.find('table',{'class':str})
+    if not data_table:
+        str = "wptb-preview-table wptb-element-main-table_setting-21257 edit-active"
+        data_table = soup.find('table',{'class':str})
     data = data_table.find_all('tr')
     lake = []
     level = []
