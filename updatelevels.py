@@ -46,7 +46,7 @@ try:
     lake = []
     level = []
     capacity = []
-    for i in np.arange(2,8,1):
+    for i in np.arange(1,8,1):
         lake.append(data[i].find_all('td')[0].text.strip())
         level.append(int(data[i].find_all('td')[1].text.strip()))
         capacity.append(int(data[i].find_all('td')[2].text.strip()))
