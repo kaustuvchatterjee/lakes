@@ -35,6 +35,7 @@ try:
     obsDate1 = str[start:end]
     obsDate1 = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate1)
     obsDate1 = datetime.strptime(obsDate1,'%d %B %Y')
+    print(obsDate1)
 
 
     str = "wptb-preview-table wptb-element-main-table_setting-21257"
