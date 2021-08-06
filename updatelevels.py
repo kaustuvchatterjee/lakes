@@ -71,5 +71,6 @@ try:
         df = df.append(df2, ignore_index=True)
         df.to_csv('lakelevels.csv', index=False)        
     
-except:
-    pass
+# except:
+#     pass
+except Exception as e: print(e)
