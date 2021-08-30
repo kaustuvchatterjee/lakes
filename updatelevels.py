@@ -12,6 +12,7 @@ from datetime import datetime
 url = "https://memumbai.com/water-levels-of-mumbai-dams-lakes/"
 headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"}
 r = requests.get(url, headers=headers)
+print(r.status_code)
 soup = BeautifulSoup(r.text,"html.parser")
 
 
