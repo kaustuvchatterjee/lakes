@@ -26,15 +26,15 @@ try:
     obsDate = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate)
     obsDate = datetime.strptime(obsDate,'%d %B %Y')
 
-    dateP = soup.find(lambda tag:tag.name=="p" and "The Mumbai lakes and dams level today reported on" in tag.text)
-    str = dateP.text
-    x = re.search('\son\s',str)
-    start = x.end()
-    x = re.search('\sat\s',str)
-    end = x.start()
-    obsDate1 = str[start:end]
-    obsDate1 = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate1)
-    obsDate1 = datetime.strptime(obsDate1,'%d %B %Y')
+#     dateP = soup.find(lambda tag:tag.name=="p" and "The Mumbai lakes and dams level today reported on" in tag.text)
+#     str = dateP.text
+#     x = re.search('\son\s',str)
+#     start = x.end()
+#     x = re.search('\sat\s',str)
+#     end = x.start()
+#     obsDate1 = str[start:end]
+#     obsDate1 = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate1)
+#     obsDate1 = datetime.strptime(obsDate1,'%d %B %Y')
 #     print(obsDate1)
 
 
