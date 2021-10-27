@@ -26,7 +26,7 @@ try:
     obsDate = str[start:end]
     obsDate = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate).strip()
     obsDate = datetime.strptime(obsDate,'%d %B %Y')
-#     print(obsDate)
+    print(obsDate)
 
 #     dateP = soup.find(lambda tag:tag.name=="p" and "The Mumbai lakes and dams level today reported on" in tag.text)
 #     str = dateP.text
