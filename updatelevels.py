@@ -67,11 +67,11 @@ try:
         df = df.append(df2, ignore_index=True)
         df.to_csv('lakelevels.csv', index=False)
 
-    if obsDate1 not in df.values:
-        dct = {'date':obsDate1, 'lake':lake, 'level':level, 'capacity':capacity, 'content':content}
-        df2 = pd.DataFrame(dct)
-        df = df.append(df2, ignore_index=True)
-        df.to_csv('lakelevels.csv', index=False)        
+#     if obsDate1 not in df.values:
+#         dct = {'date':obsDate1, 'lake':lake, 'level':level, 'capacity':capacity, 'content':content}
+#         df2 = pd.DataFrame(dct)
+#         df = df.append(df2, ignore_index=True)
+#         df.to_csv('lakelevels.csv', index=False)        
     
 # except:
 #     pass
