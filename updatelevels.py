@@ -17,16 +17,16 @@ soup = BeautifulSoup(r.text,"html.parser")
 
 
 try:
-    dateP = soup.find('p',text = re.compile('Below is the water level reported at*'))
+    dateP = soup.find('strong',text = re.compile('Below is the water level reported at*')).previous
     str = dateP.text
     x = re.search('\son\s',str)
     start = x.end()
     x = re.search('\sin\s',str)
     end = x.start()
     obsDate = str[start:end]
-    obsDate = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate)
+    obsDate = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate).strip()
     obsDate = datetime.strptime(obsDate,'%d %B %Y')
-    print(obsDate)
+#     print(obsDate)
 
 #     dateP = soup.find(lambda tag:tag.name=="p" and "The Mumbai lakes and dams level today reported on" in tag.text)
 #     str = dateP.text
