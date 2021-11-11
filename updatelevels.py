@@ -36,7 +36,7 @@ try:
 #     end = x.start()
 #     obsDate1 = str[start:end]
 #     obsDate1 = re.sub(r"\b([0123]?[0-9])(st|th|nd|rd)\b",r"\1",obsDate1)
-#     obsDate1 = datetime.strptime(obsDate1,'%d %B %Y')
+#     obsDate1 = datetime.strptime(obsDate1,'%d %B%Y')
 #     print(obsDate1)
 
 
